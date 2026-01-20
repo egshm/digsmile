@@ -1,0 +1,68 @@
+@use "../foundation/forward" as fwd;
+
+/*----------------------------------------
+	l-header
+----------------------------------------*/
+.l-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 0;
+  transition: 0.3s;
+  z-index: 998;
+}
+
+.l-header__inner {
+  display: flex;
+  justify-content: space-between;
+  width: calc((345 / 375) * 100%);
+  margin: 0 auto;
+}
+
+.l-header__logo {
+  flex-shrink: 0;
+  width: 189px;
+  height: 21px;
+}
+
+.l-header__hamburger {
+  position: relative;
+  z-index: 999;
+}
+
+.l-header__menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.l-header__menu[aria-hidden="false"] {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (min-width: 992px) {
+  .l-header__inner {
+    width: calc((1324 / 1440) * 100%);
+    max-width: 1324px;
+  }
+
+  .l-header__logo {
+    width: 260px;
+    height: 28px;
+  }
+}
+
+// スティッキーヘッダー
+.l-header.is-sticky {
+  background: var(--c_white);
+}
+
+.l-header.is-sticky .l-header__logo,
+.l-header.is-sticky .l-header__hamburger[aria-expanded="false"] {
+  color: var(--c_text);
+}

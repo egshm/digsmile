@@ -1,0 +1,40 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+	p-page-about
+----------------------------------------*/
+.p-page-about__vision {
+  margin-top: 142px;
+}
+
+.p-page-about__ceo-message {
+  margin-top: 80px;
+}
+
+.p-page-about__company {
+  margin-top: 80px;
+}
+
+.p-page-about > *:last-child {
+  margin-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+  .p-page-about__vision {
+    margin-top: 166px;
+  }
+}
+
+@media (min-width: 992px) {
+  .p-page-about__vision {
+    margin-top: 197px;
+  }
+
+  .p-page-about__ceo-message {
+    margin-top: 120px;
+  }
+
+  .p-page-about > *:last-child {
+    margin-bottom: 120px;
+  }
+}

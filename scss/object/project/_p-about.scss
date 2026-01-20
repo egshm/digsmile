@@ -1,0 +1,51 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+	p-about
+----------------------------------------*/
+.p-about {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-image: url(../images/about-bg_sp.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.p-about__inner {
+  --c_bg: rgba(255, 255, 255, 0.95);
+  width: calc((345 / 375) * 100%);
+  max-width: 590px;
+  margin: 0 auto;
+  padding: 50px 15px;
+  background: var(--c_bg);
+}
+
+.p-about__text {
+  margin-top: 30px;
+  font-size: fwd.make-clamp(14, 16, 375, 768);
+  font-weight: 500;
+  line-height: 2.0;
+  text-transform: uppercase;
+}
+
+.p-about__btn {
+  margin-top: 25px;
+}
+
+@media (min-width: 768px) {
+  .p-about {
+    background-image: url(../images/about-bg_tab.jpg);
+  }
+}
+
+@media (min-width: 992px) {
+  .p-about__inner {
+    margin-left: 50px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .p-about {
+    background-image: url(../images/about-bg_pc.jpg);
+  }
+}

@@ -1,0 +1,40 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+	c-menu
+----------------------------------------*/
+.c-menu {
+  background: var(--c_mask);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.c-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 100%;
+  padding-top: 180px;
+  margin-left: auto;
+  background: var(--c_bg);
+}
+
+.c-menu__link {
+  color: var(--c_white);
+  font-family: var(--font_mont);
+  font-size: var(--fz_20);
+  font-weight: 800;
+  letter-spacing: calc((68 / 1000) * 1em);
+  text-transform: uppercase;
+  @include fwd.hover-opacity();
+}
+
+.c-menu__img {
+  width: 42px;
+}
+
+@media (min-width: 768px) {
+  .c-menu__list {
+    max-width: 520px;
+  }
+}

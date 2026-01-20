@@ -1,0 +1,38 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+	p-vision
+----------------------------------------*/
+.p-vision__inner {
+  width: calc((345 / 375) * 100%);
+  max-width: 468px;
+  margin: 0 auto;
+}
+
+.p-vision__title-sub {
+  margin-top: 30px;
+  font-size: var(--fz_24);
+  font-weight: 700;
+}
+
+.p-vision__text-wrap {
+  margin-top: 31px;
+}
+
+.p-vision__text {
+  font-size: var(--fz_14);
+  font-weight: 700;
+  line-height: 2.0;
+}
+
+@media (min-width: 768px) {
+  .p-vision__text {
+    font-size: fwd.make-clamp(14, 16, 768, 992);
+  }
+}
+
+@media (min-width: 992px) {
+  .p-vision__inner {
+    max-width: 648px;
+  }
+}

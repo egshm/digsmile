@@ -1,0 +1,124 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+	p-first-view
+----------------------------------------*/
+.p-first-view {
+  position: relative;
+}
+
+.p-first-view__title-wrap {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 173px;
+  left: 50%;
+  width: calc((335 / 375) * 100%);
+  transform: translateX(-50%);
+}
+
+.p-first-view__title {
+  display: inline-block;
+  color: var(--c_white);
+  font-family: var(--font_mont);
+  letter-spacing: calc((63 / 1000) * 1em);
+  text-transform: uppercase;
+}
+
+// 最後のサブタイトル要素
+.p-first-view__title-sub:last-of-type {
+  margin-bottom: 12px;
+}
+
+.p-first-view__title-main {
+  font-size: var(--fz_56);
+  font-weight: 800;
+}
+
+.p-first-view__title-sub {
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.p-first-view__img-wrap {
+  width: calc((287 / 375) * 100%);
+}
+
+// キービジュアルの黒い背景部分
+.p-first-view__img-wrap::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc((283 / 375) * 100%);
+  height: 667px;
+  background: var(--c_bg);
+  z-index: -1;
+}
+
+.p-first-view__img {
+  height: 580px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+@media (min-width: 768px) {
+  .p-first-view__title-wrap {
+    width: calc((608 / 768) * 100%);
+  }
+
+  .p-first-view__title-main {
+    font-size: fwd.make-clamp(56, 72, 768, 992);
+  }
+
+  .p-first-view__title-sub {
+    font-size: fwd.make-clamp(16, 20, 768, 992);
+  }
+
+  .p-first-view__img-wrap {
+    width: calc((600 / 768) * 100%);
+  }
+
+  .p-first-view__img-wrap::before {
+    width: calc((562 / 768) * 100%);
+  }
+}
+
+@media (min-width: 992px) {
+  .p-first-view__title-wrap {
+    top: 156px;
+    width: calc((1052 / 1440) * 100%);
+    max-width: 1052px;
+  }
+
+  .p-first-view__img-wrap {
+    width: calc((1100 / 1440) * 100%);
+  }
+
+  .p-first-view__img-wrap::before {
+    width: calc((780 / 1440) * 100%);
+    height: 740px;
+  }
+
+  .p-first-view__img {
+    height: 640px;
+  }
+}
+
+// 下層ページ用
+.p-first-view--sub .p-first-view__title-wrap {
+  top: 140px;
+}
+
+.p-first-view--sub .p-first-view__title-sub {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.p-first-view--sub .p-first-view__img-wrap::before {
+  height: 449px;
+}
+
+.p-first-view--sub .p-first-view__img {
+  height: 387px;
+}

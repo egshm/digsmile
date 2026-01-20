@@ -1,0 +1,45 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+	p-page-contact
+----------------------------------------*/
+.p-page-contact__text-wrap {
+  width: calc((345 / 375) * 100%);
+  margin: 175px auto 0;
+}
+
+.p-page-contact__text {
+  font-size: fwd.make-clamp(14, 16, 375, 768);
+  line-height: 1.5;
+}
+
+.p-page-contact__form {
+  width: calc((345 / 375) * 100%);
+  margin: 40px auto 0;
+}
+
+.p-page-contact > *:last-child {
+  margin-bottom: 84px;
+}
+
+@media (min-width: 768px) {
+  .p-page-contact__text-wrap {
+    width: calc((668 / 768) * 100%);
+    max-width: 700px;
+  }
+
+  .p-page-contact__form {
+    width: calc((668 / 768) * 100%);
+    max-width: 700px;
+  }
+
+  .p-page-contact > *:last-child {
+    margin-bottom: 120px;
+  }
+}
+
+@media (min-width: 992px) {
+  .p-page-contact__text-wrap {
+    margin-top: 184px;
+  }
+}

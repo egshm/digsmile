@@ -1,0 +1,12 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+	c-heading-lv3
+----------------------------------------*/
+.c-heading-lv3 {
+  font-family: var(--font_mont);
+  font-size: fwd.make-clamp(28, 32, 375, 768);
+  font-weight: 800;
+  letter-spacing: calc((68 / 1000) * 1em);
+  text-transform: uppercase;
+}

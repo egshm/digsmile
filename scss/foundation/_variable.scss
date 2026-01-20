@@ -1,0 +1,26 @@
+:root {
+  // カラー
+  --c_text: #333333;
+  --c_border: #DDDDDD;
+  --c_bg: #222222;
+  --c_mask: rgba(34, 34, 34, 0.6);
+  --c_black: #000000;
+  --c_gray: #555555;
+  --c_white: #FFFFFF;
+  --c_focus-ring: #3498db;
+
+  // フォント
+  --font_sans: "Noto Sans JP", sans-serif;
+  --font_mont: "Montserrat", sans-serif;
+
+  // フォントサイズ
+  --fz_10: calc((10 / 16) * 1rem);
+  --fz_11: calc((11 / 16) * 1rem);
+  --fz_12: calc((12 / 16) * 1rem);
+  --fz_14: calc((14 / 16) * 1rem);
+  --fz_16: calc((16 / 16) * 1rem);
+  --fz_20: calc((20 / 16) * 1rem);
+  --fz_24: calc((24 / 16) * 1rem);
+  --fz_28: calc((28 / 16) * 1rem);
+  --fz_56: calc((56 / 16) * 1rem);
+}

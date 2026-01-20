@@ -1,0 +1,56 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+	p-front-page
+----------------------------------------*/
+.p-front-page__about {
+  margin: 165px auto 0;
+}
+
+.p-front-page__cards {
+  --c_bg: #F0F0F0;
+  display: grid;
+  gap: 40px;
+  padding: 40px 0;
+  background: var(--c_bg);
+}
+
+.p-front-page__card {
+  width: calc((345 / 375) * 100%);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .p-front-page__about {
+    margin-top: 220px;
+  }
+
+  .p-front-page__cards {
+    gap: 60px;
+    padding: 60px 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .p-front-page__about {
+    position: relative;
+    width: calc((1100 / 1440) * 100%);
+    max-width: 1100px;
+    margin-bottom: -100px;
+    z-index: 1;
+  }
+
+  .p-front-page__cards {
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    padding: 180px calc((170 / 1440) * 100%) 60px;
+  }
+
+  .p-front-page__card {
+    grid-row: span 4; //子グリッドの高さを4グリッド(title,img,text,btn)分に設定
+    grid-template-rows: subgrid; //subgrid化
+    width: auto;
+    margin: 0;
+  }
+}

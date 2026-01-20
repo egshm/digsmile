@@ -1,0 +1,51 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+	p-contact
+----------------------------------------*/
+.p-contact {
+  --c_bg: #F2F2F2;
+  padding: 40px 0;
+  background: var(--c_bg);
+}
+
+.p-contact__inner {
+  display: flex;
+  flex-direction: column-reverse;
+  width: calc((345 / 375) * 100%);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.p-contact__body {
+  margin-top: 30px;
+}
+
+.p-contact__text {
+  margin-top: 30px;
+  font-weight: 500;
+  line-height: 2.0;
+}
+
+.p-contact__btn {
+  margin-top: 28px;
+}
+
+@media (min-width: 992px) {
+  .p-contact__inner {
+    flex-direction: row;
+    align-items: center;
+    width: calc((1100 / 1440) * 100%);
+    max-width: 1100px;
+  }
+
+  .p-contact__body {
+    width: calc((440 / 1100) * 100%);
+    margin-top: 0;
+    margin-right: calc((80 / 1100) * 100%);
+  }
+
+  .p-contact__img-wrap {
+    width: calc((580 / 1100) * 100%);
+  }
+}

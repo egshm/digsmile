@@ -1,0 +1,25 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+	p-card
+----------------------------------------*/
+.p-card {
+  display: grid;
+  gap: 30px;
+}
+
+.p-card__text {
+  margin-top: -5px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.p-card__btn {
+  margin-top: -3px;
+}
+
+.p-card__img {
+  height: 100%;
+  object-fit: cover;
+}

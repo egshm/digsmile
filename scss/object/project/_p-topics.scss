@@ -1,0 +1,63 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+	p-topics
+----------------------------------------*/
+.p-topics {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.p-topics__inner {
+  width: calc((345 / 375) * 100%);
+  margin: 0 auto;
+}
+
+.p-topics__list {
+  margin-top: 10px;
+}
+
+.p-topics__item {
+  border-bottom: 1px solid var(--c_border);
+  font-family: var(--font_mont);
+  font-weight: 700;
+}
+
+.p-topics__link {
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 8px;
+  @include fwd.hover-opacity();
+}
+
+.p-topics__date {
+  --c_text: #CECECE;
+  color: var(--c_text);
+  font-size: var(--fz_10);
+}
+
+.p-topics__text {
+  margin-top: 7px;
+  font-size: fwd.make-clamp(12, 14, 375, 768);
+  line-height: 1.4;
+}
+
+.p-topics__btn-wrap {
+  margin-top: 35px;
+}
+
+@media (min-width: 992px) {
+  .p-topics__inner {
+    width: calc((1100 / 1440) * 100%);
+    max-width: 1100px;
+  }
+
+  .p-topics__list {
+    max-width: 700px;
+    margin-left: auto;
+  }
+
+  .p-topics__btn-wrap {
+    text-align: right;
+  }
+}
