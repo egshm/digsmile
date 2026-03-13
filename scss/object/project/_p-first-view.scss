@@ -20,7 +20,6 @@
 .p-first-view__title {
   display: inline-block;
   color: var(--c_white);
-  font-family: var(--font_mont);
   letter-spacing: calc((63 / 1000) * 1em);
   text-transform: uppercase;
 }
@@ -31,12 +30,14 @@
 }
 
 .p-first-view__title-main {
+  font-family: var(--font_mont);
   font-size: var(--fz_56);
   font-weight: 800;
 }
 
 .p-first-view__title-sub {
   margin-bottom: 5px;
+  font-family: var(--font_mont);
   font-weight: 700;
 }
 
