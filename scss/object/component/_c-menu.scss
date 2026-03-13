@@ -15,8 +15,10 @@
   gap: 30px;
   height: 100%;
   padding-top: 180px;
+  padding-bottom: 40px;
   margin-left: auto;
   background: var(--c_bg);
+  overflow-y: auto;
 }
 
 .c-menu__link {
