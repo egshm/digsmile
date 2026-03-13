@@ -24,6 +24,11 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible {
+  border: 2px solid var(--c_focus-ring);
+  outline: none;
+}
+
 img, svg {
   width: 100%;
   height: auto;
@@ -64,7 +69,7 @@ button {
 }
 
 button:focus-visible {
-  outline: -webkit-focus-ring-color auto 5px;
+  box-shadow: 0 0 0 2px var(--c_focus-ring);
 }
 
 select {
