@@ -1,0 +1,213 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+	c-form
+----------------------------------------*/
+.c-form__item + .c-form__item {
+  margin-top: 35px;
+}
+
+.c-form__title {
+  font-weight: 700;
+}
+
+.c-form__title--mont {
+  font-family: var(--font_mont);
+}
+
+.c-form__label {
+  --c_bg: #333333;
+  display: inline-block;
+  margin-left: 10px;
+  padding: 0.25em 0.4em;
+  background: var(--c_bg);
+  color: var(--c_white);
+  font-size: var(--fz_12);
+  font-weight: 500;
+}
+
+.c-form__input,
+.c-form__textarea {
+  display: inline-block;
+  width: 100%;
+  margin-top: 7px;
+  padding: 16px 8px;
+  border: 1px solid currentColor;
+  font-size: 1rem;
+}
+
+.c-form__input {
+  height: 48px;
+}
+
+.c-form__textarea {
+  height: 210px;
+  line-height: 1.5;
+}
+
+.c-form__radio-list {
+  display: flex;
+  flex-direction: column;
+  width: calc((325 / 345) * 100%);
+  margin: 14px auto 0;
+}
+
+.c-form__radio-item + .c-form__radio-item {
+  margin-top: 11px;
+}
+
+.c-form__radio {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+
+.c-form__radio + span {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: var(--fz_14);
+  font-weight: 500;
+}
+
+.c-form__radio:checked::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc((12 / 20) * 100%);
+  height: calc((12 / 20) * 100%);
+  background: currentColor;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.c-form__policy-wrap {
+  height: 226px;
+  margin-top: 7px;
+  padding: 10px;
+  border: 1px solid currentColor;
+  overflow-y: auto;
+}
+
+.c-form__policy {
+  font-size: fwd.make-clamp(14, 16, 375, 768);
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.c-form__agree-wrap {
+  margin-top: 35px;
+}
+
+.c-form__policy-wrap:focus {
+  box-shadow: 0 0 0 2px var(--c_focus-ring);
+}
+
+.c-form__agree-wrap > label {
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.c-form__agree {
+  flex-shrink: 0;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border: 1px solid currentColor;
+  cursor: pointer;
+}
+
+.c-form__agree:checked::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0.1em;
+  left: 0.3em;
+  width: 25%;
+  height: 50%;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(50deg);
+}
+
+.c-form__agree + span {
+  display: inline-block;
+  margin-top: -0.25em;
+  margin-left: 10px;
+  font-size: fwd.make-clamp(14, 16, 375, 768);
+  line-height: 1.5;
+}
+
+.c-form__btn-wrap {
+  position: relative;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.c-form__btn {
+  display: inline-block;
+  width: 100%;
+  max-width: 160px;
+  padding: 11px;
+  background: var(--c_black);
+  color: var(--c_gray);
+  font-size: var(--fz_14);
+  font-weight: 700;
+  pointer-events: none;
+  text-align: center;
+  // テキストの範囲選択を禁止(範囲選択できるとボタンのテキストが白くなるため)
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+// 送信ボタン有効時
+.c-form__btn.is-active {
+  color: var(--c_white);
+  pointer-events: auto;
+  @include fwd.hover-opacity(); // ホバーアニメーション
+}
+
+// 送信完了時(非表示)
+.c-form__btn.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+// 送信完了メッセージ
+.c-form__end-message {
+  --c_text: #AFA86F;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  color: var(--c_text);
+  font-weight: 700;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -50%);
+  transition: 0.4s;
+}
+
+// 送信完了メッセージ(有効化)
+.c-form__end-message.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (min-width: 768px) {
+  .c-form__radio-list {
+    flex-direction: row;
+    width: 100%;
+    padding-left: 10px;
+  }
+
+  .c-form__radio-item + .c-form__radio-item {
+    margin-top: 0;
+    margin-left: 50px;
+  }
+}

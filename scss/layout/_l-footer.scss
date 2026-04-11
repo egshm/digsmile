@@ -1,0 +1,23 @@
+@use "../foundation/forward" as fwd;
+
+/*----------------------------------------
+	l-footer
+----------------------------------------*/
+.l-footer {
+  --c_bg: #525252;
+  background: var(--c_bg);
+}
+
+.l-footer__inner {
+  padding: 19px 0;
+  text-align: center;
+}
+
+.l-footer__copyright {
+  color: var(--c_white);
+  font-family: var(--font_mont);
+  font-size: var(--fz_10);
+  font-weight: 500;
+  letter-spacing: calc((15 / 1000) * 1em);
+  text-transform: uppercase;
+}

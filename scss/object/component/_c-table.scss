@@ -1,0 +1,42 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+	c-table
+----------------------------------------*/
+.c-table {
+  border-top: 1px solid var(--c_border);
+}
+
+.c-table__inner {
+  width: 100%;
+  max-width: 678px;
+  margin-left: auto;
+}
+
+.c-table__header,
+.c-table__text {
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--c_border);
+  font-size: fwd.make-clamp(14, 16, 375, 768);
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.c-table__header {
+  width: calc((163 / 345) * 100%);
+  font-weight: 700;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.c-table__text {
+  font-weight: 500;
+}
+
+@media (min-width: 992px) {
+  .c-table__inner {
+    max-width: 800px;
+  }
+}

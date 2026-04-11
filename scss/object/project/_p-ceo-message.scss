@@ -1,0 +1,58 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+	p-ceo-message
+----------------------------------------*/
+.p-ceo-message__img-wrap {
+  width: 340px;
+  margin-right: auto;
+}
+
+.p-ceo-message__body {
+  --c_bg: #F0F0F0;
+  width: calc((345 / 375) * 100%);
+  max-width: 494px;
+  margin: -100px auto 0;
+  padding: 125px 28px 80px;
+  background: var(--c_bg);
+}
+
+.p-ceo-message__text-wrap {
+  margin-top: 30px;
+}
+
+.p-ceo-message__text {
+  font-size: fwd.make-clamp(14, 16, 375, 768);
+  font-weight: 700;
+  line-height: 2.0;
+}
+
+@media (min-width: 768px) {
+  .p-ceo-message__inner {
+    width: 708px;
+    margin: 0 auto;
+  }
+
+  .p-ceo-message__body {
+    margin-top: -85px;
+    margin-right: 0; // 左寄せのために右マージン打消し
+    padding: 109px 40px 80px;
+  }
+}
+
+@media (min-width: 992px) {
+  .p-ceo-message__inner {
+    width: calc((1100 / 1440) * 100%);
+    max-width: 1100px;
+  }
+
+  .p-ceo-message__body {
+    max-width: 770px;
+    margin-top: -85px;
+    padding: 120px 185px 90px;
+  }
+
+  .p-ceo-message__img-wrap {
+    width: 420px;
+  }
+}

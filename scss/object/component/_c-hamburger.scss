@@ -1,0 +1,62 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+	c-hamburger
+----------------------------------------*/
+.c-hamburger {
+  display: flex;
+  align-items: center;
+  color: var(--c_white);
+  font-size: var(--fz_10);
+  @include fwd.hover-opacity();
+}
+
+.c-hamburger[aria-expanded="true"] .c-hamburger__line {
+  background: transparent;
+}
+
+.c-hamburger[aria-expanded="true"] .c-hamburger__line::after {
+  transform: rotate(30deg);
+}
+
+.c-hamburger[aria-expanded="true"] .c-hamburger__line::before {
+  transform: rotate(-30deg);
+}
+
+.c-hamburger__line {
+  display: inline-block;
+  position: relative;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1em;
+  transition: 0.3s;
+}
+
+.c-hamburger__line::before,
+.c-hamburger__line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1em;
+  transition: 0.3s;
+}
+
+.c-hamburger__line::before {
+  transform: translateY(-5px);
+}
+
+.c-hamburger__line::after {
+  transform: translateY(5px);
+}
+
+.c-hamburger__text {
+  margin-left: 0.7em;
+  font-family: var(--font_mont);
+  font-weight: 800;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
