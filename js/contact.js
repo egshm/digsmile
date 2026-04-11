@@ -28,23 +28,35 @@ inputs.forEach(input => {
 
 // フォーム送信
 form.addEventListener('submit', function(event) {
-  // デフォルトのイベント動作をキャンセル
   event.preventDefault();
+
   const formData = new FormData(form);
-  const endMsg = document.getElementById('js-msgSubmitEnd');
-  const delayTime = 300;
-  fetch(form.action, {
-    method: 'POST',
-    body: formData,
-    mode: 'no-cors'
-  }).finally(() => {
-    submitBtn.classList.remove('is-active');
-    submitBtn.classList.add('is-hidden');
-    setTimeout(() => {
-      endMsg.classList.add('is-active');
-    }, delayTime);
-  });
+  const endMsg = form.querySelector('#js-msgSubmitEnd');
+  const xhr = new XMLHttpRequest();
+  const XHR_STATE_DONE = 4;
+  const DELAY_TIME = 300;
+
+  xhr.open('POST', form.action, true);
+
+  // Google FormsはCORSを許可しておらず、ブラウザによってレスポンスがブロックされる。
+  // そのため、ステータスコード（status）は常に0となり、成功判定には使えない。
+  // したがって、XHRクライアントの状態（readyState）を参照してリクエスト完了だけを監視する。
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XHR_STATE_DONE) {
+      submitBtn.classList.remove('is-active');
+      submitBtn.classList.add('is-hidden');
+      setTimeout(() => {
+        endMsg.classList.add('is-active');
+      }, DELAY_TIME);
+
+      form.reset();
+    }
+  }
+
+  // フォームの入力内容を送信
+  xhr.send(formData);
 });
+
 
 function validateForm() {
   // 必須項目がすべて入力されたかチェック
