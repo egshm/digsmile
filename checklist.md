@@ -20,7 +20,7 @@
 |15|`Title`と`Meta Description`が設定されていること<br><small>※ デスクトップアプリScreamingfrogにURLを入力して確認すること</small>|OK|2026/4/28||
 |16|ファビコンが適切に表示されていること|OK|2026/4/28||
 |17|OGPが適切に設定されていること|N/A|N/A|OGPを設定していないため|
-|18|HTML/CSSでコーディングエラーが発生しないこと<br><small>※ The W3C Markup Validation Serviceを使用すること</small>|NG|2026/4/28|HTMLで`Warning: Empty heading.`が発生する。|
+|18|HTML/CSSでコーディングエラーが発生しないこと<br><small>※ The W3C Markup Validation Serviceを使用すること</small>|NG→OK|2026/4/28|HTMLで`Warning: Empty heading.`が発生する。→修正済み|
 |19|レスポンシブチェック<br><small>※ Chrome拡張機能Responsive Viewerで確認</small>||||
 ||- Medium Screen（1024 × 800）|OK|2026/4/28||
 ||- iPad（768 × 1024）|OK|2026/4/28||
@@ -62,7 +62,7 @@
 |15|`Title`と`Meta Description`が設定されていること<br><small>※ デスクトップアプリScreamingfrogにURLを入力して確認すること</small>|OK|2026/4/28||
 |16|ファビコンが適切に表示されていること|OK|2026/4/28||
 |17|OGPが適切に設定されていること|N/A|N/A|OGPを設定していないため|
-|18|HTML/CSSでコーディングエラーが発生しないこと<br><small>※ The W3C Markup Validation Serviceを使用すること</small>|NG|2026/4/28|HTMLで`Warning: Empty heading.`が発生する。|
+|18|HTML/CSSでコーディングエラーが発生しないこと<br><small>※ The W3C Markup Validation Serviceを使用すること</small>|NG→OK|2026/4/28|HTMLで`Warning: Empty heading.`が発生する。→修正済み|
 |19|レスポンシブチェック<br><small>※ Chrome拡張機能Responsive Viewerで確認</small>||||
 ||- Medium Screen（1024 × 800）|OK|2026/4/28||
 ||- iPad（768 × 1024）|OK|2026/4/28||
@@ -104,7 +104,7 @@
 |15|`Title`と`Meta Description`が設定されていること<br><small>※ デスクトップアプリScreamingfrogにURLを入力して確認すること</small>|OK|2026/4/28|||
 |16|ファビコンが適切に表示されていること|OK|2026/4/28||
 |17|OGPが適切に設定されていること|N/A|N/A|OGPを設定していないため|
-|18|HTML/CSSでコーディングエラーが発生しないこと<br><small>※ The W3C Markup Validation Serviceを使用すること</small>|NG|2026/4/28|HTMLで`Warning: Empty heading.`が発生する。|
+|18|HTML/CSSでコーディングエラーが発生しないこと<br><small>※ The W3C Markup Validation Serviceを使用すること</small>|NG→OK|2026/4/28|HTMLで`Warning: Empty heading.`が発生する。→修正済み|
 |19|レスポンシブチェック<br><small>※ Chrome拡張機能Responsive Viewerで確認</small>||||
 ||- Medium Screen（1024 × 800）|OK|2026/4/28||
 ||- iPad（768 × 1024）|OK|2026/4/28||
