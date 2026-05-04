@@ -126,6 +126,8 @@ document.querySelectorAll('a[href*="#"]').forEach(anchor => {
     // ページ内スクロール
     if (href.startsWith('#')) {
 
+      if (href === '#!') return;
+
       // 遅延読込み画像を強制的に読込むように設定
       document.querySelectorAll('img[loading="lazy"]').forEach(lazyImage => {
         lazyImage.loading = "eager";
