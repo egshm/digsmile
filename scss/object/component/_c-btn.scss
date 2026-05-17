@@ -17,3 +17,8 @@
   text-transform: uppercase;
   @include fwd.hover-opacity(); // ホバーアニメーション
 }
+
+.c-btn:focus-visible {
+  outline-offset: -2px;
+  outline-width: 3px;
+}
