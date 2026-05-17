@@ -20,9 +20,11 @@
 }
 
 .l-header__logo {
+  position: relative;
   flex-shrink: 0;
   width: 189px;
   height: 21px;
+  z-index: 999;
 }
 
 .l-header__hamburger {
@@ -43,6 +45,12 @@
 .l-header__menu[aria-hidden="false"] {
   opacity: 1;
   visibility: visible;
+}
+
+@media (min-width: 768px) {
+  .l-header__logo {
+    z-index: auto;
+  }
 }
 
 @media (min-width: 992px) {

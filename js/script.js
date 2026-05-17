@@ -1,46 +1,11 @@
-// ハンバーガーメニュー
-//--------------------------------------------
-
-// ハンバーガーメニューボタン
-const hamburger = document.getElementById('js-hamburger');
-// ハンバーガーメニュー
-const menu = document.querySelector('.js-menu');
-// 各メニュー項目
-const menuItems = document.querySelectorAll('.js-menuItem');
-
-// ハンバーガーメニューボタンがクリックされた時
-hamburger.addEventListener('click', function() {
-
-  const expanded = this.getAttribute('aria-expanded');
-
-  // メニューが開くとき
-  if (expanded === 'false') {
-    this.setAttribute('aria-expanded', 'true');
-    menu.setAttribute('aria-hidden', 'false');
-  }
-  // メニューが閉じるとき
-  else {
-    this.setAttribute('aria-expanded', 'false');
-    menu.setAttribute('aria-hidden', 'true');
-  }
-});
-
-// メニュー項目がクリックされた時
-menuItems.forEach(item => {
-  item.addEventListener('click', function() {
-    // ハンバーガーメニューを閉じる
-    hamburger.setAttribute('aria-expanded', 'false');
-    hamburger.focus();
-    menu.setAttribute('aria-hidden', 'true');
-  });
-});
-
-
 // スティッキーヘッダー
 //--------------------------------------------
 
 // ヘッダー
 const header = document.getElementById('js-header');
+
+// ハンバーガーメニューボタン
+const hamburger = document.getElementById('js-hamburger');
 
 // ファーストビュー
 const firstView = document.getElementById('js-firstView');
@@ -56,12 +21,53 @@ window.addEventListener('load', function() {
 });
 
 function stickyHeader() {
-  const headerHeight = header.offsetHeight;
-  const firstViewHeight = firstView.offsetHeight;
-  const scrollY = window.scrollY || window.pageYOffset;
-  // 縦スクロール位置がファーストビューを越えたらヘッダースタイルを変更
-  header.classList.toggle('is-sticky', scrollY >= (firstViewHeight - headerHeight));
+  if (hamburger.getAttribute('aria-expanded') === 'false') {
+    const headerHeight = header.offsetHeight;
+    const firstViewHeight = firstView.offsetHeight;
+    const scrollY = window.scrollY || window.pageYOffset;
+    // 縦スクロール位置がファーストビューを越えたらヘッダースタイルを変更
+    header.classList.toggle('is-sticky', scrollY >= (firstViewHeight - headerHeight));
+  }
 }
+
+
+// ハンバーガーメニュー
+//--------------------------------------------
+
+// ハンバーガーメニュー
+const menu = document.querySelector('.js-menu');
+// 各メニュー項目
+const menuItems = document.querySelectorAll('.js-menuItem');
+
+// ハンバーガーメニューボタンがクリックされた時
+hamburger.addEventListener('click', function() {
+
+  const expanded = this.getAttribute('aria-expanded');
+
+  // メニューが開くとき
+  if (expanded === 'false') {
+    this.setAttribute('aria-expanded', 'true');
+    menu.setAttribute('aria-hidden', 'false');
+    header.classList.remove('is-sticky');
+  }
+  // メニューが閉じるとき
+  else {
+    this.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-hidden', 'true');
+    stickyHeader();
+  }
+});
+
+// メニュー項目がクリックされた時
+menuItems.forEach(item => {
+  item.addEventListener('click', function() {
+    // ハンバーガーメニューを閉じる
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.focus();
+    menu.setAttribute('aria-hidden', 'true');
+    stickyHeader();
+  });
+});
 
 
 // 全img要素の読込み完了を監視
